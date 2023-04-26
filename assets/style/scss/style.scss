@@ -1,0 +1,74 @@
+@import "cores";
+
+html {
+	height: 100%;
+}
+
+body {
+	background-color: $violeta;
+}
+
+.formulario-de-login {
+	background: $negra;
+}
+
+.btn-primary {
+	background: $azul;
+	border-color: $azul;
+}
+
+.btn-secondary {
+	background: $bege;
+}
+
+.link {
+	color: $violeta;
+	&._no-dec {
+		text-decoration: none;
+	}
+}
+
+.nao-possui-conta {
+	font-size: 0.875rem;
+}
+
+.header {
+	background: $cinza;
+}
+
+.numeros {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 1rem;
+	.numero {
+		appearance: none;
+		width: 2.5rem;
+		height: 2.5rem;
+		border: 1px solid $violeta;
+		border-radius: 0.25rem;
+		position: relative;
+    cursor: pointer;
+
+		&::after {
+			position: absolute;
+			content: "1";
+			display: flex;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			color: $violeta;
+			font-weight: 800;
+		}
+
+		&:checked {
+      border-color: $azul;
+    
+			background: $azul;
+
+      &::after {
+        color: $cinza;
+      }
+		}
+	}
+}

@@ -1,0 +1,47 @@
+<div class="container my-auto">
+	<form
+		class="formulario-de-login form-group col-sm-6 mx-auto p-4 py-5 p-sm-5 border bg-white"
+		action="/validateCadastro"
+		method="POST">
+		<h1 class="mb-3">Cadastrar</h1>
+
+		<label class="label">Nome completo</label>
+		<input
+			class="form-control"
+			type="text"
+			name="nome"
+			placeholder="Insira o seu nome completo..."
+			required />
+
+		<label class="label mt-1">Senha</label>
+		<input
+			class="form-control"
+			type="password"
+			name="senha"
+			placeholder="Insira a sua senha..."
+			required />
+
+		<label class="label mt-1">Província actual</label>
+		<select class="form-select" name="provincia" required>
+			<option value="L">Luanda</option>
+			<option value="S">Lunda-sul</option>
+		</select>
+
+		<div class="row m-0 mt-1">
+			<label class="label p-0">Gênero</label>
+			<select class="form-select" name="genero" required>
+				<option value="M">Masculino</option>
+				<option value="F">Feminino</option>
+			</select>
+		</div>
+
+		<fieldset class="row m-0 mt-4 gap-2">
+			<button class="btn btn-primary" type="submit">Cadastrar</button>
+			<span class="mx-auto mt-2 nao-possui-conta col-auto"
+				>Já possui uma conta?&nbsp;<a href="index.html" class="link _no-dec"
+					>Faça login</a
+				></span
+			>
+		</fieldset>
+	</form>
+</div>
