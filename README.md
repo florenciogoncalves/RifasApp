@@ -1,5 +1,5 @@
 # RifasApp
 
 ```
-É uma app simples
+Indisponível(Brevemente)
 ```
