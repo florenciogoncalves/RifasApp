@@ -1,31 +1,35 @@
 <div class="container h-100 d-flex flex-column">
-	<header class="header">
-		<span class="brand">Logado como: </span>
+	<header class="header p-2 row m-0">
+		<span class="col-12 col-sm">Nome: {{nome}}</span>
+		<span class="col-12 col-sm">Província: {{provincia}}</span>
+		<span class="col-12 col-sm">Gênero: {{genero}}</span>
 	</header>
+
 	<form
-		class="formulario-de-login form-group col-sm-6 m-auto p-4 py-5 p-sm-5 border bg-white"
-		action=""
+		class="formulario-de-login form-group col-sm-5 m-auto p-4 py-5 p-sm-5 border bg-white"
+		action="/validateSelecao"
+		method="POST"
 	>
-		<h1 class="mb-4 pe-5">Escolha a sua rifa:</h1>
+		<h1 class="__titulo mb-4 pe-5">Escolha a sua rifa:</h1>
 
 		<div class="numeros">
-			<input type="radio" name="numero" class="numero" required /><input
-				type="radio"
-				name="numero"
-				class="numero"
-			/><input type="radio" name="numero" class="numero" /><input
-				type="radio"
-				name="numero"
-				class="numero"
-			/><input type="radio" name="numero" class="numero" /><input
-				type="radio"
-				name="numero"
-				class="numero"
-			/><input type="radio" name="numero" class="numero" />
+			{{#each rifas}}
+				<div class="numero">
+					<input type="radio" name="id" class="numero-input" value="{{idPrato}}" required />
+					<span class="num">{{idPrato}}</span>
+				</div>
+			{{else}}
+				<p class="sua-rifa col-12">Lamento, mas não há mais rifas.</p>
+			{{/each}}
 		</div>
 
 		<fieldset class="row m-0 mt-4 gap-2">
-			<button class="btn btn-primary" type="submit">Selecionar</button>
+			{{#if rifas}}
+				<button class="btn btn-primary" type="submit">Selecionar</button>
+			{{else}}
+				<button class="btn btn-primary" type="submit" disabled>Selecionar</button>
+			{{/if}}
 		</fieldset>
 	</form>
+	
 </div>

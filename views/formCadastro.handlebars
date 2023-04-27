@@ -1,3 +1,10 @@
+{{#each erros}}
+
+	<div class="alert alert-danger col-6 mx-auto text-center">{{texto}}</div>
+{{else}}
+
+{{/each}}
+
 <div class="container my-auto">
 	<form
 		class="formulario-de-login form-group col-sm-6 mx-auto p-4 py-5 p-sm-5 border bg-white"
@@ -24,7 +31,7 @@
 		<label class="label mt-1">Província actual</label>
 		<select class="form-select" name="provincia" required>
 			<option value="L">Luanda</option>
-			<option value="S">Lunda-sul</option>
+			<option value="S" disabled>Lunda-sul</option>
 		</select>
 
 		<div class="row m-0 mt-1">
